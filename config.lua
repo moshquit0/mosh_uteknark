@@ -1,5 +1,30 @@
 Config = {
-    Locale = 'en-US',
+    -- Language to use from locales/* (e.g. 'de', 'en-US', 'fr', 'es', 'pl', 'tr')
+    Locale = 'de',
+
+    -- Multi-framework bridge
+    --   'auto'       : detect (es_extended -> ESX, qb-core -> QB, otherwise standalone)
+    --   'esx'|'qb'    : force a framework
+    --   'standalone'  : no framework inventory (use commands)
+    Framework = 'auto',
+
+    -- Inventory provider (server-side item give/take/check)
+    --   'framework' : use ESX/QB player inventory
+    --   'ox'        : use ox_inventory exports (recommended for standalone)
+    --   'auto'      : use ox_inventory if started (standalone), otherwise framework inventory
+    Inventory = 'auto',
+
+    -- Database
+    Database = {
+        -- MySQL table name used to store plants
+        Table = 'mosh_uteknark'
+    },
+
+    -- Standalone helpers (only used when Framework resolves to 'standalone')
+    Standalone = {
+        -- Command to plant a seed (since there is no framework usable-item system)
+        PlantCommand = 'moshseed'
+    },
     Distance = { -- All distances in meters
         Draw = 150.0,   -- How close to a plant do you need to be to see it?
         Interact = 1.5, -- How close do you need to be to interact?
@@ -12,7 +37,7 @@ Config = {
     MaxGroundAngle = 0.6, -- How tilted can the ground be and still hold plants?
     Items = { -- What items are used?
         Seed = 'weed_seed',     -- Used to plant the weed
-        Tend = nil,             -- Optional item to progress growth cycle
+        Tend = 'dunger',        -- Optional item to progress growth cycle (Tend item). Set nil to disable.
         Product = 'weed_pooch', -- What item is given when you harvest?
     },
     Scenario = {
@@ -36,7 +61,7 @@ Config = {
         -- What soil types can you grow on, and what are their multiplers/divisors? Higher is better.
         -- 0.5 means growing takes twice the time and you have half as much time to tend or harvest
         [2409420175] = 1.0,
-        [951832588] = 0.5,
+        -- [951832588] = 0.5,
         [3008270349] = 0.8,
         [3833216577] = 1.0,
         [223086562] = 1.1,
