@@ -4,17 +4,15 @@ game 'gta5'
 lua54 'yes'
 
 author 'Moshquito'
-description 'ESX UteKnark by DemmyDemon - updated for ESX Legacy'
-version '1.1.4-legacy'
+description 'mosh_uteknark (UteKnark) - multi-framework bridge (ESX/QB/Standalone)'
+version '1.2.0-mosh'
 
 dependencies {
-    'es_extended',
     'oxmysql'
 }
 
 shared_scripts {
-    '@es_extended/imports.lua',
-    '@es_extended/locale.lua',
+    'lib/locale.lua',
     'locales/*.lua',
     'config.lua',
     'lib/octree.lua',
@@ -24,10 +22,10 @@ shared_scripts {
 
 client_scripts {
     'lib/debug.lua',
-    'cl_uteknark.lua'
+    'cl_mosh_uteknark.lua'
 }
 
 server_scripts {
     '@oxmysql/lib/MySQL.lua',
-    'sv_uteknark.lua'
+    'sv_mosh_uteknark.lua'
 }
