@@ -29,3 +29,6 @@ Locales['en-US'] = {
     interact_full = 'You can\'t hold %i more weed!',
     interact_missing_item = 'You don\'t have what you need to tend this plant!',
 }
+
+-- Aliases
+Locales['en-US'] = Locales['en']
