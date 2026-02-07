@@ -29,3 +29,6 @@ Locales['sv-SE'] = {
     interact_full = 'Du har inte plats med %i mer gräs!',
     interact_missing_item = 'Du har inte det du behöver för att vårda denna växten!',
 }
+
+-- Aliases
+Locales['sv-SE'] = Locales['sv']
